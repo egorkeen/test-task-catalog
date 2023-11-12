@@ -1,0 +1,22 @@
+.navigation {
+  border: 1px solid green;
+  display: flex;
+  gap: 30px;
+}
+
+.navigation__link {
+  text-decoration: none;
+  color: black;
+  transition: .1s linear;
+}
+
+.navigation__link_active {
+  text-decoration: none;
+  color: black;
+  transition: .1s linear;
+  font-weight: 700;
+}
+
+.navigation__link:hover {
+  opacity: .8;
+}

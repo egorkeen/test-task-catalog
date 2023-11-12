@@ -1,0 +1,9 @@
+.catalog {
+  width: 1140px;
+  min-height: 400px;
+  margin: 0 auto;
+  padding: 100px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid red;
+}
