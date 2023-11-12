@@ -2,8 +2,12 @@
   width: 1140px;
   min-height: 400px;
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 70px 0;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  border: 1px solid red;
+  grid-template-columns: repeat(3, 1fr);;
+  gap: 30px;
+}
+
+.catalog__no-cards-title {
+  order: 2;
 }

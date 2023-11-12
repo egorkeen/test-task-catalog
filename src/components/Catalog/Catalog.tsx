@@ -1,27 +1,30 @@
+import { useEffect, useState } from "react";
+import { Card } from '../../types/index';
 import Header from "../Header/Header";
-import Card from "../Card/Card";
+import CardItem from "../CardItem/CardItem";
 import Footer from "../Footer/Footer";
 
 function  Catalog () {
+  const [cards, setCards] = useState<Card[]>([]);
+
+  useEffect(() => {
+    fetch('https://appevent.ru/dev/task1/catalog')
+      .then((res) => res.json())
+      .then((data) => {
+        const newCards: Card[] = data.items;
+        setCards(newCards);
+      })
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <>
       <Header />
         <section className="catalog">
-          <Card
-            title="Браслет Xiaomi Mi Band 4"
-            image="https://appevent.ru/devtasks/img/catalog_item_1.jpg"
-            price={1790}
-          />
-          <Card
-            title="Умная колонка Apple HomePod"
-            image="https://appevent.ru/devtasks/img/catalog_item_2.jpg"
-            price={29490}
-          />
-          <Card
-            title="Робот-пылесос Xiaomi Mijia Sweeping Vacuum Cleaner 1C"
-            image="https://appevent.ru/devtasks/img/catalog_item_3.jpg"
-            price={15000}
-          />
+          {
+            cards.length > 0 ?
+              cards.map((card) => (<CardItem id={card.id} name={card.name} price={card.price} image={card.image} />))
+              : <h2 className="catalog__no-cards-title">Empty</h2>
+          }
         </section>
       <Footer />
     </>

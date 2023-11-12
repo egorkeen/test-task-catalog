@@ -1,5 +1,4 @@
 .navigation {
-  border: 1px solid green;
   display: flex;
   gap: 30px;
 }

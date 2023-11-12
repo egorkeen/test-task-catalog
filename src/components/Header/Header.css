@@ -1,12 +1,17 @@
 .header {
-  width: 1140px;
+/*  styles for header */
+}
+
+.header__container {
+  max-width: 1140px;
   height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid red;
+  border-bottom: 2px solid gray;
   margin: 0 auto;
 }
+
 
 .header__logo {
   width: 32px;

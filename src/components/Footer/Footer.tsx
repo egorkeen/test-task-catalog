@@ -3,8 +3,10 @@ function Footer () {
   const currentYear = currentDate.getFullYear();
   return(
     <footer className="footer">
-      <a className="footer__github-link" href="#" target="_blank">GitHub Repository</a>
-      <span className="footer__date">{currentYear}</span>
+      <div className="footer__container">
+        <a className="footer__github-link" href="#" target="_blank">GitHub Repository</a>
+        <span className="footer__date">{currentYear}</span>
+      </div>
     </footer>
   );
 };
