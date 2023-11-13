@@ -1,15 +1,21 @@
+import { useSelector } from "react-redux";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import { useSelector } from "react-redux";
 import { Item } from "../../types/Item";
-import { selectChosenItems } from "../../store/items/items-selectors";
+import { selectChosenItems, selectTotalPrice } from "../../store/items/items-selectors";
 import ChosenItem from "./ChosenItem/ChosenItem";
+import {useEffect} from "react";
+import {fetchAllItems} from "../../store/items/items-async-actions";
+import {useAppDispatch} from "../../store/hooks/useAppDispatch";
 
 function  Cart () {
+  const dispatch = useAppDispatch();
+  const totalPrice = useSelector(selectTotalPrice);
   const chosenItems = useSelector(selectChosenItems);
-  // Подсчитываем общую стоймость добавленных в корзину товаров
-  const totalPrice: number = chosenItems.reduce((sum: number, item: Item) => sum + item.price, 0);
 
+  useEffect(() => {
+    dispatch(fetchAllItems());
+  }, []);
   return (
     <>
       <Header />
@@ -19,10 +25,7 @@ function  Cart () {
             chosenItems.length > 0 ?
               chosenItems.map((item: Item) =>
                 (<ChosenItem
-                  id={item.id}
-                  name={item.name}
-                  price={item.price}
-                  image={item.image}
+                  item={item}
                 />))
               : <h2 className="cart__no-items-title">Корзина пуста</h2>
           }

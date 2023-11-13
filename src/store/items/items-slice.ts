@@ -2,7 +2,6 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Item } from "../../types/Item";
 import { ItemsState } from "../../types/ItemState";
 import { fetchAllItems } from "./items-async-actions";
-import chosenItem from "../../components/Cart/ChosenItem/ChosenItem";
 
 const initialState: ItemsState = {
   items: [],
@@ -12,21 +11,38 @@ const initialState: ItemsState = {
 const itemsSlice = createSlice({
   name: "@@items",
   reducers: {
-    toggleItem: (state, action: PayloadAction<Item["id"]>) => {
+
+    addItem: (state, action: PayloadAction<Item["id"]>) => {
+      if (!state.chosenItemsIds.includes(action.payload)) {
+        state.chosenItemsIds.push(action.payload);
+        localStorage.setItem("chosenItemsIds", JSON.stringify(state.chosenItemsIds));
+      }
+    },
+    removeItem: (state, action: PayloadAction<Item["id"]>) => {
       if (state.chosenItemsIds.includes(action.payload)) {
-        state.chosenItemsIds.filter((id) => id !== action.payload)
+        const newIds = state.chosenItemsIds.filter((id) => id !== action.payload);
+        state.chosenItemsIds = newIds;
+        localStorage.setItem("chosenItemsIds", JSON.stringify(state.chosenItemsIds));
       };
-      state.chosenItemsIds.push(action.payload);
     },
   },
   initialState,
   extraReducers: (builder) => {
+  //   Этот экстра-редьюсер необходим,
+  //   чтобы когда закончится асинхронный запрос (состояние fullfilled),
+  //   карточки запушились в стейт
   builder
     .addCase(fetchAllItems.fulfilled, (state, action) => {
       state.items = action.payload;
+      // после успешного api-запроса достаем id'шники и возвращаем товары в корзину
+      const localItems = localStorage.getItem("chosenItemsIds");
+      if (localItems !== null) {
+        const localIds: Item["id"][] = JSON.parse(localItems);
+        state.chosenItemsIds = localIds;
+      };
     })
   },
 });
 
 export const itemsReducer = itemsSlice.reducer;
-export const { toggleItem } = itemsSlice.actions;
+export const { addItem, removeItem } = itemsSlice.actions;

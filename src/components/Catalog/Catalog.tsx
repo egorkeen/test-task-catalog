@@ -24,10 +24,7 @@ function  Catalog () {
             items.length > 0 ?
               items.map((item) =>
                 (<ItemComponent
-                  id={item.id}
-                  name={item.name}
-                  price={item.price}
-                  image={item.image}
+                  item={item}
                 />))
               :
               <>
