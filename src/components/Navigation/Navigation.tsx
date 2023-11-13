@@ -1,6 +1,10 @@
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectChosenItems } from "../../store/items/items-selectors";
 
 function Navigation () {
+  // здесь добавленные товары нужны для подсчёта количества товаров
+  const chosenItems = useSelector(selectChosenItems);
   return (
     <nav className="navigation">
       <NavLink
@@ -15,7 +19,7 @@ function Navigation () {
         className={({ isActive }) => isActive ? "navigation__link_active" : "navigation__link"}
         to="/cart"
       >
-        Корзина
+        Корзина [{chosenItems.length}]
       </NavLink>
     </nav>
   );

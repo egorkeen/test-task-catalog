@@ -16,5 +16,6 @@ code {
 @import url(./components/Navigation/Navigation.css);
 @import url(./components/Catalog/Catalog.css);
 @import url(./components/Cart/Cart.css);
-@import url(./components/CardItem/CardItem.css);
+@import url(./components/Catalog/ItemComponent/ItemComponent.css);
+@import url(./components/Cart/ChosenItem/ChosenItem.css);
 @import url(./components/Footer/Footer.css);

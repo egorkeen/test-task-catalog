@@ -1,6 +1,6 @@
-export type Card = {
+export type Item = {
   id: number,
   name: string,
   price: number,
-  image: string
+  image: string,
 };
