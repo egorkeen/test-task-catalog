@@ -1,14 +1,12 @@
 .catalog {
-  width: 1140px;
-  min-height: 300px;
-  margin: 0 auto;
-  padding: 70px 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);;
-  gap: 30px;
+  margin: 60px auto 130px;
 }
 
-.catalog__no-items-title {
-  order: 2;
-  text-align: center;
+.catalog__items-container {
+  max-width: 1244px;
+  min-height: 490px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);;
+  gap: 22px;
 }

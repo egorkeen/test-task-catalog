@@ -1,0 +1,19 @@
+.empty-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 490px;
+}
+
+.empty-container__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  opacity: .5;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

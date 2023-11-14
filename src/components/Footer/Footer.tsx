@@ -4,7 +4,7 @@ function Footer () {
   return(
     <footer className="footer">
       <div className="footer__container">
-        <a className="footer__github-link" href="#" target="_blank">GitHub Repository</a>
+        <a className="footer__github-link" href="https://github.com/egorkeen/test-task-catalog" target="_blank">GitHub Repository</a>
         <span className="footer__date">{currentYear}</span>
       </div>
     </footer>

@@ -6,7 +6,7 @@ interface IProps {
   item: Item,
 };
 
-function ChosenItem ({ item }: IProps) {
+function ChosenItemComponent ({ item }: IProps) {
   const dispatch = useAppDispatch();
 
   const handleRemoveClick = () => {
@@ -16,11 +16,13 @@ function ChosenItem ({ item }: IProps) {
   return (
     <article className="chosen-item">
       <img src={item.image} className="chosen-item__image" />
-      <h3 className="chosen-item__name">{item.name}</h3>
-      <span className="chosen-iem__price">{item.price}</span>
-      <button onClick={handleRemoveClick} className="chosen-item__remove-button">Убрать</button>
+      <div className="chosen-item__data-container">
+        <h3 className="chosen-item__name">{item.name}</h3>
+        <span className="chosen-item__price">{item.price} ₽</span>
+      </div>
+      <button onClick={handleRemoveClick} className="chosen-item__remove-button"></button>
     </article>
   );
 };
 
-export default ChosenItem;
+export default ChosenItemComponent;

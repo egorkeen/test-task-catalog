@@ -1,0 +1,63 @@
+.chosen-item {
+  width: 1244px;
+  height: 145px;
+  display: flex;
+  align-items: center;
+  box-shadow: -3px 4px 14.9px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  position: relative;
+}
+
+.chosen-item__image {
+  width: 145px;
+  height: 120px;
+  margin: 0 30px 0 0;
+  padding: 0;
+  object-fit: contain;
+}
+
+.chosen-item__data-container {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.chosen-item__price {
+  color: #292929;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+}
+
+.chosen-item__name {
+  color: #494949;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.chosen-item__remove-button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  background-color: #fff;
+  background-image: url(/src/images/remove-button.svg);
+  transition: .1s linear;
+  position: absolute;
+  right: 30px;
+  top: auto;
+}
+
+.chosen-item__remove-button:hover {
+  opacity: .8;
+  cursor: pointer;
+}

@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { Item } from '../../types/Item';
 import Header from "../Header/Header";
 import ItemComponent from "./ItemComponent/ItemComponent";
 import Footer from "../Footer/Footer";
 import { useAppDispatch } from "../../store/hooks/useAppDispatch";
 import { selectAllItems } from "../../store/items/items-selectors";
 import { fetchAllItems } from "../../store/items/items-async-actions";
+import EmptyContainer from "../EmptyContainer/EmptyContainer";
 
 function  Catalog () {
   const items = useSelector(selectAllItems);
@@ -19,21 +19,20 @@ function  Catalog () {
   return (
     <>
       <Header />
-        <section className="catalog">
-          {
-            items.length > 0 ?
+      <section className="catalog">
+      {
+        items.length > 0 ?
+          <div className="catalog__items-container">
+            {
               items.map((item) =>
                 (<ItemComponent
                   item={item}
                 />))
-              :
-              <>
-                <p></p>
-                <h2 className="catalog__no-items-title">Каталог пуст</h2>
-              </>
-
-          }
-        </section>
+            }
+          </div>
+          : <EmptyContainer title="Каталог пуст" />
+      }
+      </section>
       <Footer />
     </>
   );

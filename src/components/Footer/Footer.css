@@ -1,25 +1,42 @@
 .footer {
-
+  background-color: #292929;
+  height: auto;
 }
 
 .footer__container {
   max-width: 1140px;
-  height: 70px;
   margin: 0 auto;
-  padding: 30px 0;
-  border-top: 2px solid gray;
+  padding: 53px 0;
   display: flex;
   justify-content: space-between;
 }
 
 
 .footer__github-link {
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  color: black;
   transition: .1s linear;
+  color: #FFF;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .footer__github-link:hover {
   opacity: .8;
 }
+
+.footer__date {
+  display: flex;
+  align-items: center;
+  color: #FFF;
+  opacity: .5;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 

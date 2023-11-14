@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
+import logo from "../../images/logo.svg";
 
 function  Header () {
 
@@ -7,7 +8,7 @@ function  Header () {
     <header className="header">
       <div className="header__container">
         <Link className="header__logo" to="/">
-          <h2>logo</h2>
+          <img src={logo} alt="Логотип" />
         </Link>
         <Navigation />
       </div>

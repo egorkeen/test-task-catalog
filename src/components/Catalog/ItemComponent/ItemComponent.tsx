@@ -33,12 +33,14 @@ function ItemComponent ({ item }: IProps) {
   return (
     <article className="item">
       <img className="item__image" src={item.image} />
-      <h3 className="item__title">{item.name}</h3>
-      <span className="item__price">{item.price} ₽</span>
+      <div className="item__data-container">
+        <span className="item__price">{item.price} ₽</span>
+        <h3 className="item__title">{item.name}</h3>
+      </div>
       <div className="item__button-container">
         {/*Если карточка была добавлена в корзину, то отрендерится кнопка оформить заказ*/}
         {isChosen ?
-          <button onClick={handleOrderClick} className="item__add-button">Оформить заказ</button>
+          <button onClick={handleOrderClick} className="item__add-button_added">Оформить заказ</button>
           :
           <button onClick={handleAddClick} className="item__add-button">Добавить в корзину</button>
         }
