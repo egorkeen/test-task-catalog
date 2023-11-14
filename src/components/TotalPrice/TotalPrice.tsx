@@ -5,7 +5,7 @@ function TotalPrice () {
   // достаем числи итоговой стоймости
   const totalPrice = useSelector(selectTotalPrice);
   // форматируем его
-  const formatedTotalPrice = totalPrice.toLocaleString('ru-RU', { style: 'currency', currency: "RUB" });
+  const formatedTotalPrice = totalPrice.toLocaleString('ru-RU', { style: 'currency', currency: "RUB", minimumFractionDigits: 0 });
 
   return (
     <span className="cart__total-price">Итого к оплате: {formatedTotalPrice}</span>
