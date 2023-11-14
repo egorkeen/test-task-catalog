@@ -23,17 +23,19 @@ function  Cart () {
       <section className="cart">
         {
           chosenItems.length > 0 ?
-            <div className="cart__items-container">
+            <>
+              <div className="cart__items-container">
               {
                 chosenItems.map((item: Item) =>
                   (<ChosenItemComponent
                     item={item}
                   />))
               }
+              <span className="cart__total-cost">Итого к оплате: {totalPrice} ₽</span>
             </div>
+            </>
             : <EmptyContainer title="Корзина Пуста" />
         }
-        {/*{chosenItems.length > 0 && <span className="cart__total-cost">Итого к оплате: {totalPrice} ₽</span>}*/}
       </section>
       <Footer />
     </>
