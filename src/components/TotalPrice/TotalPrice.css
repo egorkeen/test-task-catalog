@@ -1,0 +1,10 @@
+.cart__total-price {
+  width: 100%;
+  color: #292929;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 66px 0 0;
+  padding: 0;
+}

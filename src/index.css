@@ -18,6 +18,7 @@ code {
 @import url(./components/Navigation/Navigation.css);
 @import url(./components/Catalog/Catalog.css);
 @import url(./components/Cart/Cart.css);
+@import url(./components/TotalPrice/TotalPrice.css);
 @import url(./components/EmptyContainer/EmptyContainer.css);
 @import url(./components/Catalog/ItemComponent/ItemComponent.css);
 @import url(./components/Cart/ChosenItemComponent/ChosenItemComponent.css);
