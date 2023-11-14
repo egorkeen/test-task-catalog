@@ -28,4 +28,4 @@
 Ссылки 🔗
 
 1. Github репозиторий - https://github.com/egorkeen/test-task-catalog/
-2. Деплой проекта - https://test-task-catalog-khxiecovx-egorkeens-projects.vercel.app/
+2. Деплой проекта - https://test-task-catalog-4icptesjv-egorkeens-projects.vercel.app/
