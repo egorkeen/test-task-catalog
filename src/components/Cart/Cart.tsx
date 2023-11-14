@@ -2,13 +2,13 @@ import { useSelector } from "react-redux";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { Item } from "../../types/Item";
-import { selectChosenItems } from "../../store/items/items-selectors";
+import { selectChosenItems } from "../../store/slices/items/items.selectors";
 import ChosenItemComponent from "./ChosenItemComponent/ChosenItemComponent";
 import { useEffect } from "react";
-import { fetchAllItems } from "../../store/items/items-async-actions";
+import { fetchAllItems } from "../../store/slices/items/items.actions";
 import { useAppDispatch } from "../../store/hooks/useAppDispatch";
 import EmptyContainer from "../EmptyContainer/EmptyContainer";
-import TotalPrice from "../TotalPrice/TotalPrice";
+import CustomTotalPrice from "../CustomTotalPrice/CustomTotalPrice";
 
 function  Cart () {
   const dispatch = useAppDispatch();
@@ -28,10 +28,11 @@ function  Cart () {
               {
                 chosenItems.map((item: Item) =>
                   (<ChosenItemComponent
+                    key={item.id}
                     item={item}
                   />))
               }
-              <TotalPrice />
+              <CustomTotalPrice />
             </div>
             </>
             : <EmptyContainer title="Корзина Пуста" />

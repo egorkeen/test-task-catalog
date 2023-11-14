@@ -4,8 +4,8 @@ import Header from "../Header/Header";
 import ItemComponent from "./ItemComponent/ItemComponent";
 import Footer from "../Footer/Footer";
 import { useAppDispatch } from "../../store/hooks/useAppDispatch";
-import { selectAllItems } from "../../store/items/items-selectors";
-import { fetchAllItems } from "../../store/items/items-async-actions";
+import { selectAllItems } from "../../store/slices/items/items.selectors";
+import { fetchAllItems } from "../../store/slices/items/items.actions";
 import EmptyContainer from "../EmptyContainer/EmptyContainer";
 
 function  Catalog () {
@@ -26,6 +26,7 @@ function  Catalog () {
             {
               items.map((item) =>
                 (<ItemComponent
+                  key={item.id}
                   item={item}
                 />))
             }

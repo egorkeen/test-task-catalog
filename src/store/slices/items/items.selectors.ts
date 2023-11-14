@@ -1,5 +1,5 @@
-import { RootState } from "../store";
-import { Item } from "../../types";
+import { RootState } from "../../store";
+import { Item } from "../../../types";
 
 
 export const selectAllItems = (state: RootState) => state.items.items;

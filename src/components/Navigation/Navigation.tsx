@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectChosenItems } from "../../store/items/items-selectors";
+import { selectChosenItems } from "../../store/slices/items/items.selectors";
 import basket from "../../images/basket.svg";
 
 function Navigation () {

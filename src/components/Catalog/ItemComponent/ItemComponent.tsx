@@ -2,9 +2,10 @@ import { useNavigate } from "react-router-dom";
 import {useSelector} from "react-redux";
 
 import { Item } from '../../../types/Item';
-import { addItem } from "../../../store/items/items-slice";
+import { addItem } from "../../../store/slices/items/items.slice";
 import { useAppDispatch } from "../../../store/hooks/useAppDispatch";
-import { selectChosenItems } from "../../../store/items/items-selectors";
+import { selectChosenItems } from "../../../store/slices/items/items.selectors";
+import CustomPrice from "../../CustomPrice/CustomPrice";
 
 // создаем интерфейс для пропсов
 interface IProps {
@@ -34,7 +35,9 @@ function ItemComponent ({ item }: IProps) {
     <article className="item">
       <img className="item__image" src={item.image} />
       <div className="item__data-container">
-        <span className="item__price">{item.price} ₽</span>
+        <span className="item__price">
+          <CustomPrice price={item.price} />
+        </span>
         <h3 className="item__title">{item.name}</h3>
       </div>
       <div className="item__button-container">

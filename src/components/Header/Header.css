@@ -1,5 +1,6 @@
 .header {
   background-color: #292929;
+  position: sticky;
 }
 
 .header__container {

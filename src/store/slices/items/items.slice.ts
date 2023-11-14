@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Item } from "../../types/Item";
-import { ItemsState } from "../../types/ItemState";
-import { fetchAllItems } from "./items-async-actions";
+import { Item } from "../../../types/Item";
+import { ItemsState } from "../../../types/ItemState";
+import { fetchAllItems } from "./items.actions";
 
 const initialState: ItemsState = {
   items: [],

@@ -1,1 +1,1 @@
-export const apiUrl = 'https://appevent.ru/dev/task1/catalog';
+export const apiСatalogUrl = 'https://appevent.ru/dev/task1/catalog';
